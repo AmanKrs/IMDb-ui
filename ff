@@ -1,0 +1,4 @@
+curl --request GET \
+     --url 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1' \
+     --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYjJmNjI1ZTRlZWVhZGIyYTEyNTdkZGI4M2Y4YjIxMiIsInN1YiI6IjY0Y2U2Nzg5ODUwOTBmMDEwNjkxMjYxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.R0YV86d30wvtQBqtN7Y3qrsAaacqt8uL4zZQ-F9MYKg' \
+     --header 'accept: application/json'

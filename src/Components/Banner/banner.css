@@ -1,0 +1,137 @@
+.banner-carousel {
+  display: flex;
+  color: #0c0c0c;
+  justify-content: space-between;
+  background-color: black;
+  margin: 30px;
+  width: 100%;
+  height: 550px;
+}
+.horizontal-carousel {
+  width: 65%;
+  border: 3px solid black;
+  position: relative;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 10px;
+  height: 500px;
+}
+.horizontal-carousel:hover .play-banner {
+  color: #f3c222;
+}
+.banner-poster {
+  width: 100%;
+  height: 100%;
+}
+
+.gradientClass {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 22%;
+  background: linear-gradient(180deg, #99999900, rgba(0, 0, 0, 1) 35%);
+}
+
+.title-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  color: #fff;
+  bottom: 20px;
+  left: 300px;
+}
+.horizontal-carousel h1 {
+  width: 400px;
+  margin: 0px;
+}
+.play-banner {
+  font-size: 78px !important;
+  cursor: pointer;
+  margin: 0;
+}
+
+.prev-banner {
+  width: 45px;
+  height: 60px;
+  background-color: transparent;
+  opacity: 1;
+  font-size: 30px;
+  font-weight: 400;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  position: absolute;
+  top: 200px;
+  left: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+.next-banner {
+  width: 45px;
+  height: 60px;
+  background-color: transparent;
+  font-size: 30px;
+  font-weight: 400;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 240px;
+  right: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.next-banner:hover {
+  color: #f3c222;
+}
+.prev-banner:hover {
+  color: #f3c222;
+}
+
+.vertical-carousel {
+  width: 30%;
+  background-color: black;
+  border: 3px solid black;
+  color: #fff;
+  margin-right: 80px;
+  padding: 0 10px;
+  height: 545px;
+}
+.upnxt {
+  color: #f3c222;
+  margin: 10px;
+}
+.vm-box {
+  background-color: #1d1b1b;
+  margin-right: 40px;
+  padding: 5px 0 10px 10px;
+  width: 90%;
+  height: 450px;
+}
+.vertical-movie {
+  display: flex;
+  margin-top: 10px;
+  height: auto;
+}
+
+.v-details {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.vertical-movie:hover .play-banner-side {
+  color: #f3c222;
+}
+
+.browsetrailer {
+  display: flex;
+  margin: 10px auto;
+}
+.browsetrailer:hover {
+  color: #f3c222;
+}
