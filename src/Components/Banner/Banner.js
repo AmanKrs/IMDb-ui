@@ -3,10 +3,15 @@ import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import axios from "axios";
 import { ChevronRight } from "lucide-react";
 import "./banner.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Banner() {
   const [movie, setMovie] = useState([]);
   const [currentBanner, setCurrentBanner] = useState({});
+  const navigate = useNavigate();
+  const handlevideo = () => {
+    navigate("/play");
+  };
 
   const prevBanner = () => {
     if (movie.indexOf(currentBanner) === 0) {
@@ -21,7 +26,9 @@ export default function Banner() {
     } else {
       setCurrentBanner(movie[movie.indexOf(currentBanner) + 1]);
     }
+    setMovie(movie.slice(1, movie.length));
   };
+
   const getBannerMovie = async () => {
     const res = await axios.get(
       "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
@@ -33,7 +40,7 @@ export default function Banner() {
       }
     );
     console.log(res.data.results);
-    setMovie(res.data.results);
+    setMovie(res.data.results.slice(1, movie.length - 1));
     setCurrentBanner(res.data.results[0]);
     console.log(currentBanner);
   };
@@ -41,7 +48,6 @@ export default function Banner() {
     getBannerMovie();
   }, []);
 
-  
   return (
     <div className="banner">
       <div className="banner-carousel">
@@ -49,17 +55,20 @@ export default function Banner() {
           <button className="prev-banner" onClick={prevBanner}>
             {"<"}
           </button>
-          <img
-            src={
-              `https://image.tmdb.org/t/p/original` + currentBanner.backdrop_path
-            }
-            alt="hposter"
-            className="banner-poster"
-          ></img>
-          <div className="gradientClass">
-            <div className="title-action">
-              <PlayCircleOutlineIcon className="play-banner" />
-              <h1>{currentBanner.title}</h1>
+          <div onClick={handlevideo}>
+            <img
+              src={
+                `https://image.tmdb.org/t/p/original` +
+                currentBanner.backdrop_path
+              }
+              alt="hposter"
+              className="banner-poster"
+            ></img>
+            <div className="gradientClass">
+              <div className="title-action">
+                <PlayCircleOutlineIcon className="play-banner" />
+                <h1>{currentBanner.title}</h1>
+              </div>
             </div>
           </div>
           <button className="next-banner" onClick={nextBanner}>
@@ -95,11 +104,11 @@ export default function Banner() {
                   </>
                 );
               })}
-            <h2 className="browsetrailer">
-              <span>Browse trailers</span>
-              <ChevronRight size={30} strokeWidth={2.5} />
-            </h2>
           </div>
+          <h2 className="browsetrailer">
+            <span>Browse trailers</span>
+            <ChevronRight size={30} strokeWidth={2.5} />
+          </h2>
         </div>
       </div>
     </div>

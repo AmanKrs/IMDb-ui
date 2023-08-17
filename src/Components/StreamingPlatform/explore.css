@@ -1,0 +1,17 @@
+.explore {
+  padding-left: 40px;
+}
+
+.exploreBox {
+  color: #fff;
+}
+.exploreBar {
+  color: #fff !important;
+  font-weight: bold !important;
+  margin-left: 20px !important;
+}
+.exploreBar:hover {
+  background-color: rgb(26, 25, 25);
+}
+
+

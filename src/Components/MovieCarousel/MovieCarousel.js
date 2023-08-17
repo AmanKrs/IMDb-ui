@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./moviecarousel.css";
-import { ChevronRight } from "lucide-react";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import StarPurple500OutlinedIcon from "@mui/icons-material/StarPurple500Outlined";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
@@ -69,11 +68,6 @@ export default function MovieCarousel(props) {
 
   return (
     <div className="moviecarousel-head">
-      <header className="choice-Head">
-        <div className="headbar"></div>
-        <h1>{props.heading}</h1>
-        <ChevronRight size={30} strokeWidth={2.5} className="headlink" />
-      </header>
       <div className="carousel-container">
         <button className="prev-list" onClick={prev}>
           {"<"}
