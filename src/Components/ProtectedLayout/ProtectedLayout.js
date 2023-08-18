@@ -11,7 +11,7 @@ export default function ProtectedLayout() {
 
   useEffect(() => {
     if (localStorage.getItem("token") == null) {
-      setLoggedIn(false);
+      setLoggedIn(true);
     }
   }, []);
   return (

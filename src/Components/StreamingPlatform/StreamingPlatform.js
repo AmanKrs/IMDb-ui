@@ -10,7 +10,6 @@ import { amber } from "@mui/material/colors";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MovieCarousel from "../MovieCarousel/MovieCarousel";
 
-
 const theme = createTheme({
   palette: {
     primary: amber,
@@ -77,27 +76,39 @@ export default function StreamingPlatform() {
             </Box>
             <CustomTabPanel value={value} index={0}>
               include with Prime
-              <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              <div style={{ marginLeft: "-40px" }}>
+                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
               with subscription
-              <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              <div style={{ marginLeft: "-40px" }}>
+                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
               go to hotstar.com
-              <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              <div style={{ marginLeft: "-40px" }}>
+                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
               go to mxplayer.in
-              <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              <div style={{ marginLeft: "-40px" }}>
+                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={4}>
               go to jiocinema.com
-              <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              <div style={{ marginLeft: "-40px" }}>
+                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>
               go to sonyliv.com
-              <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              <div style={{ marginLeft: "-40px" }}>
+                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+              </div>
             </CustomTabPanel>
           </Box>
         </div>
