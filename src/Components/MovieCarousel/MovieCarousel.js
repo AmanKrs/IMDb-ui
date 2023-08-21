@@ -27,9 +27,10 @@ export default function MovieCarousel(props) {
   const cardmove = useRef();
   const [movieItem, setMovieItem] = useState([]);
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(10);
   const [ratingTitle, setRatingTitle] = useState();
   const handleClose = () => setOpen(false);
+  
   const handleRating = ({ elem }) => {
     setOpen(true);
     setRatingTitle(elem.title);
@@ -62,6 +63,7 @@ export default function MovieCarousel(props) {
     });
   };
   console.log("first", value);
+
   useEffect(() => {
     getMoviesForCarousel();
   }, []);
@@ -127,7 +129,7 @@ export default function MovieCarousel(props) {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
-            <img src={star} className="rating-star-icon"></img>
+            <img src={star} className="rating-star-icon" alt="starrating"></img>
             <span className="rating-star-value">{value}</span>
             <p
               style={{ color: "#f3c222", fontSize: "18px", fontWeight: "bold" }}

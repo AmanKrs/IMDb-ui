@@ -1,0 +1,54 @@
+.videoBox {
+  padding: 40px 0px 20px 40px;
+  height: auto;
+  width: 800px;
+  margin-left: 40px;
+}
+.videoboxaction {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  margin-bottom: 5px;
+}
+.closevideo {
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.sharevideo {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.closevideo:hover {
+  background-color: rgb(29, 28, 28);
+}
+.sharevideo:hover {
+  background-color: rgb(29, 28, 28);
+}
+.videoPlayer {
+  position: relative;
+  cursor: pointer;
+}
+.playbtn {
+  position: absolute;
+  bottom: 50%;
+  left: 45%;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 70px !important;
+  cursor: pointer;
+}
+
+.videoPlayer:hover .playbtn {
+  opacity: 1;
+}

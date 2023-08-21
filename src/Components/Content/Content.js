@@ -3,12 +3,12 @@ import Banner from "../Banner/Banner";
 import MovieCarousel from "../MovieCarousel/MovieCarousel";
 import { Route, Routes } from "react-router-dom";
 import ProtectedLayout from "../ProtectedLayout/ProtectedLayout";
-import StreamingPlatform from "../StreamingPlatform/StreamingPlatform";
+// import StreamingPlatform from "../StreamingPlatform/StreamingPlatform";
 import TitleComp from "../TitleComp/TitleComp";
 
-// const StreamingPlatform = React.lazy(() =>
-//   import("../StreamingPlatform/StreamingPlatform")
-// );
+const StreamingPlatform = React.lazy(() =>
+  import("../StreamingPlatform/StreamingPlatform")
+);
 
 export default function Content() {
   return (
@@ -30,12 +30,12 @@ export default function Content() {
           ></Route>
         </Route>
       </Routes>
-      {/* <Suspense
+      <Suspense
         fallback={<div style={{ textAlign: "center" }}>Loading....</div>}
       >
-       
-      </Suspense> */}
-      <StreamingPlatform />
+        <StreamingPlatform />
+      </Suspense>
+
       <TitleComp heading="Popular" />
       <MovieCarousel api="https://api.themoviedb.org/3/movie/popular?language=en-US&page=1"></MovieCarousel>
     </div>

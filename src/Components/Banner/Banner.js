@@ -9,8 +9,8 @@ export default function Banner() {
   const [movie, setMovie] = useState([]);
   const [currentBanner, setCurrentBanner] = useState({});
   const navigate = useNavigate();
-  const handlevideo = () => {
-    navigate("/play");
+  const handlevideo = (id) => {
+    navigate("/video/" + id);
   };
 
   const prevBanner = () => {
@@ -55,7 +55,7 @@ export default function Banner() {
           <button className="prev-banner" onClick={prevBanner}>
             {"<"}
           </button>
-          <div onClick={handlevideo}>
+          <div onClick={()=>{handlevideo(currentBanner.id)}}>
             <img
               src={
                 `https://image.tmdb.org/t/p/original` +
@@ -92,7 +92,7 @@ export default function Banner() {
                           alt="vposter"
                         ></img>
                       </div>
-                      <div className="v-details">
+                      <div className="v-details" onClick={()=>{handlevideo(elem.id)}}>
                         <PlayCircleOutlineIcon
                           style={{ fontSize: "40px" }}
                           className="play-banner-side"

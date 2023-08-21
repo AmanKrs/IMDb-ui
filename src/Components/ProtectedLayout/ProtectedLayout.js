@@ -11,7 +11,7 @@ export default function ProtectedLayout() {
 
   useEffect(() => {
     if (localStorage.getItem("token") == null) {
-      setLoggedIn(true);
+      setLoggedIn(false);
     }
   }, []);
   return (
@@ -33,6 +33,7 @@ export default function ProtectedLayout() {
             <button className="addtoWatchlist" onClick={handlelogin}>
               + watchlist
             </button>
+            
           </div>
         </div>
       )}

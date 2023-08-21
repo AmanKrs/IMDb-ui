@@ -16,6 +16,13 @@ const theme = createTheme({
   },
 });
 
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  };
+}
+
 export default function StreamingPlatform() {
   const [value, setValue] = useState(0);
 
@@ -66,12 +73,28 @@ export default function StreamingPlatform() {
                 aria-label="basic tabs example"
                 indicatorColor="primary"
               >
-                <Tab label="PRIME VIDEO" className="exploreBar" />
-                <Tab label="NETFLIX" className="exploreBar" />
-                <Tab label="DISNEY +" className="exploreBar" />
-                <Tab label="MXPLAYER" className="exploreBar" />
-                <Tab label="JIOCINEMA" className="exploreBar" />
-                <Tab label="SONYLIV" className="exploreBar" />
+                <Tab
+                  label="PRIME VIDEO"
+                  className="exploreBar"
+                  {...a11yProps(0)}
+                />
+                <Tab label="NETFLIX" className="exploreBar" {...a11yProps(1)} />
+                <Tab
+                  label="DISNEY +"
+                  className="exploreBar"
+                  {...a11yProps(2)}
+                />
+                <Tab
+                  label="MXPLAYER"
+                  className="exploreBar"
+                  {...a11yProps(3)}
+                />
+                <Tab
+                  label="JIOCINEMA"
+                  className="exploreBar"
+                  {...a11yProps(4)}
+                />
+                <Tab label="SONYLIV" className="exploreBar" {...a11yProps(5)} />
               </Tabs>
             </Box>
             <CustomTabPanel value={value} index={0}>
