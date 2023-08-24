@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Banner() {
   const [movie, setMovie] = useState([]);
+  const [moviearr, setMovieArr] = useState([]);
   const [currentBanner, setCurrentBanner] = useState({});
   const navigate = useNavigate();
   const handlevideo = (id) => {
@@ -20,14 +21,31 @@ export default function Banner() {
       setCurrentBanner(movie[movie.indexOf(currentBanner) - 1]);
     }
   };
+
   const nextBanner = () => {
+    console.log("index " + movie.indexOf(currentBanner));
+    if (movie.indexOf(currentBanner) < movie.length - 1) {
+      setMovie(movie.slice(1, movie.length));
+    }
     if (movie.indexOf(currentBanner) === movie.length - 1) {
+      console.log("movie length = 0");
       setCurrentBanner(movie[0]);
+      setMovie(moviearr);
     } else {
       setCurrentBanner(movie[movie.indexOf(currentBanner) + 1]);
     }
-    setMovie(movie.slice(1, movie.length));
   };
+
+  // setTimeout(() => {
+  //   if (movie.indexOf(currentBanner) === movie.length - 1) {
+  //     setCurrentBanner(movie[0]);
+  //   } else {
+  //     setCurrentBanner(movie[movie.indexOf(currentBanner) + 1]);
+  //   }
+  //   if (movie.length - 1) {
+  //     setMovie(movie.slice(1, movie.length));
+  //   }
+  // }, 3000);
 
   const getBannerMovie = async () => {
     const res = await axios.get(
@@ -43,6 +61,7 @@ export default function Banner() {
     setMovie(res.data.results.slice(1, movie.length - 1));
     setCurrentBanner(res.data.results[0]);
     console.log(currentBanner);
+    setMovieArr(res.data.results.slice(1, movie.length - 1));
   };
   useEffect(() => {
     getBannerMovie();
@@ -55,7 +74,11 @@ export default function Banner() {
           <button className="prev-banner" onClick={prevBanner}>
             {"<"}
           </button>
-          <div onClick={()=>{handlevideo(currentBanner.id)}}>
+          <div
+            onClick={() => {
+              handlevideo(currentBanner.id);
+            }}
+          >
             <img
               src={
                 `https://image.tmdb.org/t/p/original` +
@@ -92,7 +115,12 @@ export default function Banner() {
                           alt="vposter"
                         ></img>
                       </div>
-                      <div className="v-details" onClick={()=>{handlevideo(elem.id)}}>
+                      <div
+                        className="v-details"
+                        onClick={() => {
+                          handlevideo(elem.id);
+                        }}
+                      >
                         <PlayCircleOutlineIcon
                           style={{ fontSize: "40px" }}
                           className="play-banner-side"

@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import ProtectedLayout from "../ProtectedLayout/ProtectedLayout";
 // import StreamingPlatform from "../StreamingPlatform/StreamingPlatform";
 import TitleComp from "../TitleComp/TitleComp";
+import Ads from "../Advertisement/Ads";
 
 const StreamingPlatform = React.lazy(() =>
   import("../StreamingPlatform/StreamingPlatform")
@@ -13,6 +14,7 @@ const StreamingPlatform = React.lazy(() =>
 export default function Content() {
   return (
     <div>
+    <Ads />
       <Banner />
 
       <h1 style={{ color: "#f3c222", marginLeft: "40px" }}>What to watch</h1>

@@ -8,13 +8,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "../Menu/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import QueueIcon from "@mui/icons-material/Queue";
-
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [state, setState] = useState({
     top: false,
   });
-
+  const navigate = useNavigate();
   const toggleDrawer = (anchor, open) => (event) => {
     setState({ ...state, [anchor]: open });
   };
@@ -36,6 +36,11 @@ export default function Header() {
       <Menu />
     </Box>
   );
+
+  const signIn = () => {
+    navigate("/login");
+  };
+
   return (
     <div>
       <nav className="navbar">
@@ -78,9 +83,12 @@ export default function Header() {
           />
         </Box>
         <button className="head-watchlist">
-          <QueueIcon /><p>WatchList</p>
+          <QueueIcon />
+          <p>WatchList</p>
         </button>
-        <button className="singin-btn">Sing In</button>
+        <button className="singin-btn" onClick={signIn}>
+          Sing In
+        </button>
         <button className="head-lang">
           <select className="head-lang-sel">
             <option>En</option>

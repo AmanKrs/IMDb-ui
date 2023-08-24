@@ -106,31 +106,31 @@ export default function StreamingPlatform() {
             <CustomTabPanel value={value} index={1}>
               with subscription
               <div style={{ marginLeft: "-40px" }}>
-                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=2" />
               </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
               go to hotstar.com
               <div style={{ marginLeft: "-40px" }}>
-                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=3" />
               </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
               go to mxplayer.in
               <div style={{ marginLeft: "-40px" }}>
-                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=4" />
               </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={4}>
               go to jiocinema.com
               <div style={{ marginLeft: "-40px" }}>
-                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=5" />
               </div>
             </CustomTabPanel>
             <CustomTabPanel value={value} index={5}>
               go to sonyliv.com
               <div style={{ marginLeft: "-40px" }}>
-                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1" />
+                <MovieCarousel api="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=6" />
               </div>
             </CustomTabPanel>
           </Box>
