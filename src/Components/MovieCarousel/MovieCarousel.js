@@ -30,7 +30,7 @@ export default function MovieCarousel(props) {
   const [value, setValue] = useState(10);
   const [ratingTitle, setRatingTitle] = useState();
   const handleClose = () => setOpen(false);
-  
+
   const handleRating = ({ elem }) => {
     setOpen(true);
     setRatingTitle(elem.title);
@@ -72,7 +72,7 @@ export default function MovieCarousel(props) {
     <div className="moviecarousel-head">
       <div className="carousel-container">
         <button className="prev-list" onClick={prev}>
-          {"<"}
+          &#8249;
         </button>
         <div className="carousel-list" ref={cardmove}>
           {movieItem.map((elem) => {
@@ -120,7 +120,7 @@ export default function MovieCarousel(props) {
           })}
         </div>
         <button className="next-list" onClick={next}>
-          {">"}
+          &#8250;
         </button>
         <Modal
           open={open}

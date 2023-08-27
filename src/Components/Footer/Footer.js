@@ -1,12 +1,19 @@
 import React from "react";
 import "./footer.css";
 import { Facebook, Twitter, Youtube, Instagram, Copyright } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-export default function Footer() {
+export default function Footer(props) {
+  const navigate = useNavigate();
+
+  const handleRegister = () => {
+    props.setReg(false);
+    navigate("/register");
+  };
   return (
     <>
       <footer className="footer-content">
-        <button className="ftr-signup-btn">Sign up for more</button>
+        <button className="ftr-signup-btn" onClick={handleRegister}>Sign up for more</button>
 
         <div className="ftr-icon">
           <Twitter size={26} />

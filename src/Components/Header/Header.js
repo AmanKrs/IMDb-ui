@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./header.css";
 import logo from "../../assets/logo.png";
 import Box from "@mui/material/Box";
@@ -11,6 +11,7 @@ import QueueIcon from "@mui/icons-material/Queue";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const [logged, setLogged] = useState(false);
   const [state, setState] = useState({
     top: false,
   });
@@ -41,6 +42,16 @@ export default function Header() {
     navigate("/login");
   };
 
+  const signout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+    window.location.reload();
+  };
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setLogged(true);
+    }
+  }, []);
   return (
     <div>
       <nav className="navbar">
@@ -86,9 +97,15 @@ export default function Header() {
           <QueueIcon />
           <p>WatchList</p>
         </button>
-        <button className="singin-btn" onClick={signIn}>
-          Sing In
-        </button>
+        {logged ? (
+          <button className="singin-btn" onClick={signout}>
+            Sing Out
+          </button>
+        ) : (
+          <button className="singin-btn" onClick={signIn}>
+            Sing In
+          </button>
+        )}
         <button className="head-lang">
           <select className="head-lang-sel">
             <option>En</option>

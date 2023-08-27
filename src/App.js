@@ -6,19 +6,29 @@ import Content from "./Components/Content/Content";
 import VideoPlayer from "./Components/VideoPlayer/VideoPlayer";
 import Footer from "./Components/Footer/Footer";
 import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register";
+import { useState } from "react";
 
 function App() {
+  const [reg, setReg] = useState(true);
+  console.log("reggg", reg);
+
   return (
     <>
       <BrowserRouter>
-        <Header />
-        
+        {reg && <Header />}
+
         <Routes>
           <Route path="/" element={<Content />}></Route>
           <Route path="/video/:id" element={<VideoPlayer />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route
+            path="/register"
+            element={<Register setReg={setReg} />}
+          ></Route>
         </Routes>
-        <Footer />
+
+        {reg && <Footer setReg={setReg} />}
       </BrowserRouter>
     </>
   );
