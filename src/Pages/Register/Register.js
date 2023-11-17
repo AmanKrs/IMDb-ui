@@ -19,7 +19,7 @@ export default function Register(props) {
       );
       console.log(res);
       if (res.status === 200) {
-        props.setReg(true);
+        props.setReg(false);
         navigate("/login");
       }
     } catch (e) {

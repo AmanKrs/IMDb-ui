@@ -10,16 +10,17 @@ import Register from "./Pages/Register/Register";
 import { useState } from "react";
 
 function App() {
-  const [reg, setReg] = useState(true);
+  const [reg, setReg] = useState(false);
+  const [logged, setLogged] = useState(false);
   console.log("reggg", reg);
 
   return (
     <>
       <BrowserRouter>
-        {reg && <Header />}
+        {!reg && <Header logged={logged} setLogged={setLogged}/>}
 
         <Routes>
-          <Route path="/" element={<Content />}></Route>
+          <Route path="*" element={<Content />}></Route>
           <Route path="/video/:id" element={<VideoPlayer />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route
@@ -28,7 +29,7 @@ function App() {
           ></Route>
         </Routes>
 
-        {reg && <Footer setReg={setReg} />}
+        {!reg && <Footer logged={logged} setReg={setReg} />}
       </BrowserRouter>
     </>
   );

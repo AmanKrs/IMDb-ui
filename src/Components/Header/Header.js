@@ -10,8 +10,9 @@ import SearchIcon from "@mui/icons-material/Search";
 import QueueIcon from "@mui/icons-material/Queue";
 import { useNavigate } from "react-router-dom";
 
-export default function Header() {
-  const [logged, setLogged] = useState(false);
+export default function Header(props) {
+ const {logged, setLogged} = props
+  
   const [state, setState] = useState({
     top: false,
   });

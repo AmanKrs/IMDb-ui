@@ -7,13 +7,19 @@ export default function Footer(props) {
   const navigate = useNavigate();
 
   const handleRegister = () => {
-    props.setReg(false);
+    props.setReg(true);
     navigate("/register");
   };
+
+ 
   return (
     <>
       <footer className="footer-content">
-        <button className="ftr-signup-btn" onClick={handleRegister}>Sign up for more</button>
+        {!props.logged && (
+          <button className="ftr-signup-btn" onClick={handleRegister}>
+            Sign up for more
+          </button>
+        )}
 
         <div className="ftr-icon">
           <Twitter size={26} />

@@ -45,7 +45,7 @@ export default function Login() {
           <div className="loginform">
             <label>Password</label>
             <input
-              type="text"
+              type="password"
               name="password"
               placeholder="Enter your email address"
               className="formvalue"
